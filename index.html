@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinémas Guzzo | Films à l'affiche et billets — 10 mégaplexes autour de Montréal</title>
+  <meta name="description" content="Les films à l'affiche ce soir dans les 10 mégaplexes Guzzo du Grand Montréal. IMAX, D-BOX, Club Guzzo. Billets en quelques secondes.">
+  <link rel="preload" href="fonts/BricolageGrotesque-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/DMSans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/backdrop-odyssee.webp" as="image">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav-brand" href="#" aria-label="Cinémas Guzzo, accueil">
+    <img src="assets/logo-guzzo.png" alt="Cinémas Guzzo" width="92" height="44">
+  </a>
+  <nav class="nav-links" aria-label="Navigation principale">
+    <a href="#affiche">Films</a>
+    <a href="#cinemas">Cinémas</a>
+  </nav>
+  <a class="btn btn-red nav-cta" href="#affiche">Billets</a>
+</header>
+
+<!-- HERO : le blockbuster de la semaine, UN CTA -->
+<section class="hero">
+  <img class="hero-bg" src="assets/backdrop-odyssee.webp" alt="L'Odyssée, un film de Christopher Nolan" fetchpriority="high">
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="kicker stagger"><span class="dot" aria-hidden="true"></span>Avant-première · 16 juillet · Méga-Plex Terrebonne</p>
+    <h1 class="stagger">Ce soir, on sort au cinéma.</h1>
+    <p class="lede stagger">L'Odyssée de Christopher Nolan arrive le 17 juillet. Et neuf autres films jouent en ce moment dans un mégaplexe près de chez vous.</p>
+    <div class="hero-actions stagger">
+      <a class="btn btn-red btn-big" href="#affiche">Acheter des billets<span class="arr" aria-hidden="true">→</span></a>
+    </div>
+    <p class="proof stagger">149 écrans · 10 mégaplexes · IMAX &amp; D-BOX</p>
+  </div>
+</section>
+
+<!-- À L'AFFICHE : rail d'affiches réelles, billets par carte -->
+<section class="affiche" id="affiche">
+  <div class="section-head" data-reveal>
+    <p class="eyebrow">À l'affiche cette semaine</p>
+    <h2>Choisissez votre film.<br>On garde votre siège.</h2>
+  </div>
+  <div class="rail" data-reveal aria-label="Films à l'affiche">
+    <article class="card"><img loading="lazy" src="assets/poster-9515.webp" alt="Affiche de L'Odyssée" width="360" height="520"><div class="card-body"><h3>L'Odyssée</h3><p class="chip">Dès le 17 juillet</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+    <article class="card"><img loading="lazy" src="assets/poster-9510.webp" alt="Affiche de Histoire de jouets 5" width="360" height="520"><div class="card-body"><h3>Histoire de jouets 5</h3><p class="chip">Famille</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+    <article class="card"><img loading="lazy" src="assets/poster-9541.webp" alt="Affiche de L'opéra de la terreur : L'embrasement" width="360" height="520"><div class="card-body"><h3>L'opéra de la terreur</h3><p class="chip">Horreur · 16+</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+    <article class="card"><img loading="lazy" src="assets/poster-9505.webp" alt="Affiche de Moana" width="360" height="520"><div class="card-body"><h3>Moana (V.F.)</h3><p class="chip">Famille</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+    <article class="card"><img loading="lazy" src="assets/poster-9507.webp" alt="Affiche de Supergirl" width="360" height="520"><div class="card-body"><h3>Supergirl (V.F.)</h3><p class="chip">Action</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+    <article class="card"><img loading="lazy" src="assets/poster-9522.webp" alt="Affiche de Film de peur" width="360" height="520"><div class="card-body"><h3>Film de peur</h3><p class="chip">Comédie</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+    <article class="card"><img loading="lazy" src="assets/poster-9524.webp" alt="Affiche de La révélation" width="360" height="520"><div class="card-body"><h3>La révélation</h3><p class="chip">Suspense</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+    <article class="card"><img loading="lazy" src="assets/poster-9546.webp" alt="Affiche de Jackass : le meilleur pour la fin" width="360" height="520"><div class="card-body"><h3>Jackass</h3><p class="chip">Comédie</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+    <article class="card"><img loading="lazy" src="assets/poster-9520.webp" alt="Affiche de Les minions et les monstres" width="360" height="520"><div class="card-body"><h3>Les minions &amp; les monstres</h3><p class="chip">Famille</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+    <article class="card"><img loading="lazy" src="assets/poster-9500.webp" alt="Affiche de Michael" width="360" height="520"><div class="card-body"><h3>Michael (V.F.)</h3><p class="chip">Biographie</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+  </div>
+</section>
+
+<!-- L'EXPÉRIENCE -->
+<section class="exp">
+  <div class="section-head" data-reveal>
+    <p class="eyebrow">L'expérience Méga-Plex</p>
+    <h2>Plus grand que votre salon.</h2>
+  </div>
+  <div class="exp-grid">
+    <article class="exp-card" data-reveal>
+      <p class="exp-num">01</p>
+      <h3>IMAX</h3>
+      <p>L'écran géant du Méga-Plex Deux-Montagnes, pour les films pensés en grand.</p>
+    </article>
+    <article class="exp-card" data-reveal>
+      <p class="exp-num">02</p>
+      <h3>D-BOX</h3>
+      <p>Des sièges qui bougent avec le film. L'action, vous la sentez.</p>
+    </article>
+    <article class="exp-card" data-reveal>
+      <p class="exp-num">03</p>
+      <h3>Club Guzzo</h3>
+      <p>Des points sur chaque billet, des récompenses à chaque sortie. Gratuit.</p>
+    </article>
+  </div>
+</section>
+
+<!-- NOS MÉGAPLEXES -->
+<section class="cinemas" id="cinemas">
+  <div class="section-head" data-reveal>
+    <p class="eyebrow">Nos mégaplexes</p>
+    <h2>Il y en a un près de chez vous.</h2>
+  </div>
+  <div class="chips" data-reveal>
+    <span class="place">Terrebonne 14</span>
+    <span class="place">Lacordaire 16</span>
+    <span class="place">Jacques-Cartier 14</span>
+    <span class="place">Sphèretech 14</span>
+    <span class="place">Pont-Viau 16</span>
+    <span class="place">Deux-Montagnes 14 · IMAX</span>
+    <span class="place">Saint-Jean 12</span>
+    <span class="place more">et 3 autres complexes</span>
+  </div>
+  <p class="cinemas-note" data-reveal>Une entreprise familiale montréalaise. 149 salles dans le Grand Montréal.</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="assets/logo-guzzo.png" alt="Cinémas Guzzo" width="92" height="44" loading="lazy">
+    <nav class="footer-links" aria-label="Liens de pied de page">
+      <a href="#affiche">Films à l'affiche</a>
+      <a href="#cinemas">Nos cinémas</a>
+      <a href="#">Club Guzzo</a>
+      <a href="#">Fondation Guzzo</a>
+      <a href="#">Nous joindre</a>
+    </nav>
+    <p class="footer-credit">Concept non affilié · démonstration par <a href="https://www.dondisanteme.com">Dondi Santeme</a></p>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
