@@ -124,27 +124,30 @@ section { padding: clamp(56px, 10vw, 110px) 0; }
 .eyebrow { color: var(--rouge-2); font-weight: 700; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; }
 h2 { font-size: clamp(30px, 6.4vw, 54px); font-weight: 800; }
 
-/* Rail d'affiches */
-.rail {
-  display: flex; gap: 14px;
-  overflow-x: auto; scroll-snap-type: x mandatory;
-  padding: 6px clamp(20px, 5vw, 56px) 22px;
-  scrollbar-width: none;
-}
-.rail::-webkit-scrollbar { display: none; }
-.card {
-  flex: 0 0 min(62vw, 240px); scroll-snap-align: start;
+/* Liste des films — rangées type « évènements à venir » (réf. billetterie evenko) */
+.liste { display: grid; gap: 12px; padding: 0 clamp(20px, 5vw, 56px); }
+.evrow {
+  display: flex; align-items: center; gap: 16px;
   background: var(--carte); border: 1px solid var(--ligne);
-  border-radius: var(--r-lg); overflow: hidden;
+  border-radius: var(--r-lg); padding: 12px;
   transition: transform 0.3s, border-color 0.3s;
 }
-.card:hover { transform: translateY(-6px); border-color: rgba(245, 243, 238, 0.25); }
-.card img { width: 100%; aspect-ratio: 360 / 520; object-fit: cover; }
-.card-body { padding: 14px 16px 16px; display: grid; gap: 8px; justify-items: start; }
-.card h3 { font-size: 17px; font-weight: 700; }
-.chip {
-  font-size: 12px; font-weight: 500; color: var(--gris);
-  border: 1px solid var(--ligne); border-radius: 999px; padding: 3px 10px;
+.evrow:hover { transform: translateY(-4px); border-color: rgba(245, 243, 238, 0.25); }
+.evrow img {
+  width: 76px; aspect-ratio: 3 / 4.2; object-fit: cover;
+  border-radius: 14px; flex-shrink: 0;
+}
+.evinfo { flex: 1; min-width: 0; display: grid; gap: 3px; }
+.evdate {
+  color: var(--rouge-2); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.evinfo h3 { font-size: clamp(17px, 4vw, 21px); font-weight: 800; }
+.evmeta { color: var(--gris); font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.evrow .btn-mini { flex-shrink: 0; }
+@media (min-width: 820px) {
+  .evrow { padding: 14px 18px 14px 14px; }
+  .evrow img { width: 92px; }
 }
 
 /* Expérience */
@@ -224,17 +227,17 @@ h2 { font-size: clamp(30px, 6.4vw, 54px); font-weight: 800; }
     <p class="eyebrow">À l'affiche cette semaine</p>
     <h2>Choisissez votre film.<br>On garde votre siège.</h2>
   </div>
-  <div class="rail" data-reveal aria-label="Films à l'affiche">
-    <article class="card"><img loading="lazy" src="assets/poster-9515.webp" alt="Affiche de L'Odyssée" width="360" height="520"><div class="card-body"><h3>L'Odyssée</h3><p class="chip">Dès le 17 juillet</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
-    <article class="card"><img loading="lazy" src="assets/poster-9510.webp" alt="Affiche de Histoire de jouets 5" width="360" height="520"><div class="card-body"><h3>Histoire de jouets 5</h3><p class="chip">Famille</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
-    <article class="card"><img loading="lazy" src="assets/poster-9541.webp" alt="Affiche de L'opéra de la terreur : L'embrasement" width="360" height="520"><div class="card-body"><h3>L'opéra de la terreur</h3><p class="chip">Horreur · 16+</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
-    <article class="card"><img loading="lazy" src="assets/poster-9505.webp" alt="Affiche de Moana" width="360" height="520"><div class="card-body"><h3>Moana (V.F.)</h3><p class="chip">Famille</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
-    <article class="card"><img loading="lazy" src="assets/poster-9507.webp" alt="Affiche de Supergirl" width="360" height="520"><div class="card-body"><h3>Supergirl (V.F.)</h3><p class="chip">Action</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
-    <article class="card"><img loading="lazy" src="assets/poster-9522.webp" alt="Affiche de Film de peur" width="360" height="520"><div class="card-body"><h3>Film de peur</h3><p class="chip">Comédie</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
-    <article class="card"><img loading="lazy" src="assets/poster-9524.webp" alt="Affiche de La révélation" width="360" height="520"><div class="card-body"><h3>La révélation</h3><p class="chip">Suspense</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
-    <article class="card"><img loading="lazy" src="assets/poster-9546.webp" alt="Affiche de Jackass : le meilleur pour la fin" width="360" height="520"><div class="card-body"><h3>Jackass</h3><p class="chip">Comédie</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
-    <article class="card"><img loading="lazy" src="assets/poster-9520.webp" alt="Affiche de Les minions et les monstres" width="360" height="520"><div class="card-body"><h3>Les minions &amp; les monstres</h3><p class="chip">Famille</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
-    <article class="card"><img loading="lazy" src="assets/poster-9500.webp" alt="Affiche de Michael" width="360" height="520"><div class="card-body"><h3>Michael (V.F.)</h3><p class="chip">Biographie</p><a class="btn btn-red btn-mini" href="#">Billets</a></div></article>
+  <div class="liste" aria-label="Films à l'affiche">
+    <article class="evrow" data-reveal><img loading="lazy" src="assets/poster-9515.webp" alt="Affiche de L'Odyssée" width="360" height="520"><div class="evinfo"><p class="evdate">Dès le 17 juillet · Avant-première le 16</p><h3>L'Odyssée</h3><p class="evmeta">De Christopher Nolan · Méga-Plex Terrebonne 14</p></div><a class="btn btn-red btn-mini" href="#">Billets<span class="arr" aria-hidden="true">→</span></a></article>
+    <article class="evrow" data-reveal><img loading="lazy" src="assets/poster-9510.webp" alt="Affiche de Histoire de jouets 5" width="360" height="520"><div class="evinfo"><p class="evdate">À l'affiche</p><h3>Histoire de jouets 5</h3><p class="evmeta">Famille · Dans tous les mégaplexes</p></div><a class="btn btn-red btn-mini" href="#">Billets<span class="arr" aria-hidden="true">→</span></a></article>
+    <article class="evrow" data-reveal><img loading="lazy" src="assets/poster-9541.webp" alt="Affiche de L'opéra de la terreur : L'embrasement" width="360" height="520"><div class="evinfo"><p class="evdate">À l'affiche</p><h3>L'opéra de la terreur</h3><p class="evmeta">Horreur · 16 ans +</p></div><a class="btn btn-red btn-mini" href="#">Billets<span class="arr" aria-hidden="true">→</span></a></article>
+    <article class="evrow" data-reveal><img loading="lazy" src="assets/poster-9505.webp" alt="Affiche de Moana" width="360" height="520"><div class="evinfo"><p class="evdate">À l'affiche</p><h3>Moana (V.F.)</h3><p class="evmeta">Famille · En version française</p></div><a class="btn btn-red btn-mini" href="#">Billets<span class="arr" aria-hidden="true">→</span></a></article>
+    <article class="evrow" data-reveal><img loading="lazy" src="assets/poster-9507.webp" alt="Affiche de Supergirl" width="360" height="520"><div class="evinfo"><p class="evdate">À l'affiche</p><h3>Supergirl (V.F.)</h3><p class="evmeta">Action · En version française</p></div><a class="btn btn-red btn-mini" href="#">Billets<span class="arr" aria-hidden="true">→</span></a></article>
+    <article class="evrow" data-reveal><img loading="lazy" src="assets/poster-9522.webp" alt="Affiche de Film de peur" width="360" height="520"><div class="evinfo"><p class="evdate">À l'affiche</p><h3>Film de peur</h3><p class="evmeta">Comédie</p></div><a class="btn btn-red btn-mini" href="#">Billets<span class="arr" aria-hidden="true">→</span></a></article>
+    <article class="evrow" data-reveal><img loading="lazy" src="assets/poster-9524.webp" alt="Affiche de La révélation" width="360" height="520"><div class="evinfo"><p class="evdate">À l'affiche</p><h3>La révélation</h3><p class="evmeta">Suspense</p></div><a class="btn btn-red btn-mini" href="#">Billets<span class="arr" aria-hidden="true">→</span></a></article>
+    <article class="evrow" data-reveal><img loading="lazy" src="assets/poster-9546.webp" alt="Affiche de Jackass : le meilleur pour la fin" width="360" height="520"><div class="evinfo"><p class="evdate">À l'affiche</p><h3>Jackass</h3><p class="evmeta">Comédie · Le meilleur pour la fin</p></div><a class="btn btn-red btn-mini" href="#">Billets<span class="arr" aria-hidden="true">→</span></a></article>
+    <article class="evrow" data-reveal><img loading="lazy" src="assets/poster-9520.webp" alt="Affiche de Les minions et les monstres" width="360" height="520"><div class="evinfo"><p class="evdate">À l'affiche</p><h3>Les minions &amp; les monstres</h3><p class="evmeta">Famille · Animation</p></div><a class="btn btn-red btn-mini" href="#">Billets<span class="arr" aria-hidden="true">→</span></a></article>
+    <article class="evrow" data-reveal><img loading="lazy" src="assets/poster-9500.webp" alt="Affiche de Michael" width="360" height="520"><div class="evinfo"><p class="evdate">À l'affiche</p><h3>Michael (V.F.)</h3><p class="evmeta">Biographie · En version française</p></div><a class="btn btn-red btn-mini" href="#">Billets<span class="arr" aria-hidden="true">→</span></a></article>
   </div>
 </section>
 
